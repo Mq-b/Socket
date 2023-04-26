@@ -6,7 +6,7 @@ cmake_minimum_required (VERSION 3.8)
 project ("socket")
 
 # 将源代码添加到此项目的可执行文件。
-add_executable (socket "src/echo_mpclient.cpp")
+add_executable (socket "src/fork_socket.cpp")
 
 if (CMAKE_SYSTEM_NAME MATCHES "Windows")          # for Windows
 	target_link_libraries(socket "ws2_32.lib")
