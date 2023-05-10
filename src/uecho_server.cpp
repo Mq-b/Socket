@@ -31,8 +31,8 @@ int main(int argc,char*argv[]) {
 		error_handling("bind() error");
 	while (1) {
 		clnt_adr_sz = sizeof(clnt_adr);
-		str_len = recvfrom(serv_sock, message, BUF_SIZE, 0, (struct sockaddr*)&clnt_adr, &clnt_adr_sz);//传输数据
-		sendto(serv_sock, message, str_len, 0, (struct sockaddr*)&clnt_adr, clnt_adr_sz);//接收数据
+		str_len = recvfrom(serv_sock, message, BUF_SIZE, 0, (struct sockaddr*)&clnt_adr, &clnt_adr_sz);//读取数据
+		sendto(serv_sock, message, str_len, 0, (struct sockaddr*)&clnt_adr, clnt_adr_sz);//写入数据
 	}
 	close(serv_sock);
 }
