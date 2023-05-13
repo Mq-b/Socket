@@ -21,7 +21,7 @@ int main(int argc,char*argv[]){
     adr.sin_family = AF_INET;
     adr.sin_addr.s_addr = htonl(INADDR_ANY);
     adr.sin_port = htons(static_cast<short>(atoi(argv[1])));
-    //光播不需要ip_mreq 加入多播，所以代码会少一些
+    //广播不需要ip_mreq 加入多播，所以代码会少一些
     if(bind(recv_sock,reinterpret_cast<sockaddr*>(&adr),sizeof(adr))==-1)
         error_handling("bind() error");
 
